@@ -1,0 +1,26 @@
+protocols {
+    isis {
+        interface lo0.0;
+        interface ge-0/1/3.10 {
+            passive;
+        }
+        interface ge-0/1/3.20;
+    }
+}
+interfaces {
+    ge-0/1/3 {
+        vlan-tagging;
+        unit 20 {
+            vlan-id 20;
+            family inet {
+                address 10.10.55.1/24;
+            }
+        }
+        unit 30 {
+            vlan-id 30;
+            family inet {
+                address 1.2.3.4/24;
+            }
+        }
+    }
+}

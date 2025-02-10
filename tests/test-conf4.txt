@@ -1,0 +1,141 @@
+version 20.3R1-S1.2;
+groups {
+    MGMT {
+        interfaces {
+            fxp0 {
+                unit 0 {
+                    family inet {
+                        address 192.168.0.11/24;
+                    }
+                }
+            }
+        }
+    }
+    LAB {
+        system {
+            root-authentication {
+                encrypted-password "abc"; ## SECRET-DATA
+            }
+            login {
+                user mjungbluth {
+                    uid 2000;
+                    class super-user;
+                    authentication {
+                        encrypted-password "abc"; ## SECRET-DATA
+                    }
+                }
+                user pi {
+                    uid 2001;
+                    class super-user;
+                    authentication {
+                        ssh-rsa "abc"; ## SECRET-DATA
+                    }
+                }
+            }
+            services {
+                ssh;
+                netconf {
+                    ssh;
+                }
+            }
+            time-zone Europe/Berlin;
+            name-server {
+                8.8.8.8;
+            }
+            syslog {
+                user * {
+                    any emergency;
+                }
+                host 192.168.0.1 {
+                    any alert;
+                    authorization error;
+                    daemon warning;
+                    kernel warning;
+                    pfe notice;
+                    change-log notice;
+                    interactive-commands notice;
+                    facility-override local7;
+                    explicit-priority;
+                }
+                file messages {
+                    any notice;
+                    authorization info;
+                }
+            }
+            archival {
+                configuration {
+                    transfer-on-commit;
+                    archive-sites {
+                        "ftp://backup@192.168.0.1:/" password "abc"; ## SECRET-DATA
+                    }
+                }
+            }
+            ntp {
+                server 192.168.0.1;
+            }
+        }
+    }
+}
+apply-groups [ MGMT LAB ];
+system {
+    host-name acx1;
+}
+chassis {
+    fpc 0 {
+        pic 0 {
+            tunnel-services {
+                bandwidth 1g;
+            }
+        }
+    }
+}
+interfaces {
+    ge-0/0/0 {
+        description "ex2200  ge-0/0/1";
+    }
+    ge-0/0/1 {
+        description "acx2  ge-0/0/1";
+    }
+    ge-0/0/2 {
+        description "acx2  ge-0/0/2";
+    }
+    ge-0/0/4 {
+        description "srx1  ge-0/0/4";
+    }
+    ge-0/1/2 {
+        description "etx202a User Port 3";
+        media-type copper;
+    }
+    ge-0/1/3 {
+        description "etx202a Network Port 1";
+        vlan-tagging;
+        unit 10 {
+            vlan-id 10;
+            family inet {
+                address 100.94.235.1/24;
+            }
+        }
+        unit 20 {
+            vlan-id 20;
+            family inet {
+                address 10.10.55.1/24;
+            }
+        }
+    }
+    fxp0 {
+        description "sw1-mj  Gi1/0/7";
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                address 172.16.0.1/32;
+            }
+        }
+    }
+}
+protocols {
+    isis {
+        interface lo0.0;
+        interface ge-0/1/3.10;
+    }
+}

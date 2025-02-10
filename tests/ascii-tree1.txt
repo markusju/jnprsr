@@ -1,0 +1,47 @@
+root
+├── system
+│   ├── host-name JUN1-DEP1
+│   ├── domain-name virtual.sbarjatiya.com
+│   ├── domain-search [ virtual.sbarjatiya.com example.com ]
+│   ├── location
+│   │   ├── country-code 0091
+│   │   ├── building Building-X
+│   │   └── floor 2
+│   ├── root-authentication
+│   │   └── encrypted-password "<encrypted password>"
+│   ├── name-server
+│   │   └── 10.4.3.222
+│   ├── login
+│   │   ├── announcement "Welcome to Department1 Juniper switch"
+│   │   ├── message "Unauthorized access is prohibited"
+│   │   └── user saurabh
+│   │       ├── full-name "Saurabh Barjatiya"
+│   │       ├── uid 501
+│   │       ├── class super-user
+│   │       └── authentication
+│   │           └── encrypted-password "<encrypted password>"
+│   ├── services
+│   │   ├── ssh
+│   │   │   └── root-login allow
+│   │   ├── telnet
+│   │   └── web-management
+│   │       └── http
+│   ├── syslog
+│   │   ├── user *
+│   │   │   └── any emergency
+│   │   ├── file messages
+│   │   │   ├── any notice
+│   │   │   └── authorization info
+│   │   └── file interactive-commands
+│   │       └── interactive-commands any
+│   └── ntp
+│       ├── boot-server time.google.com
+│       └── server 10.4.8.3
+├── protocols
+│   └── isis
+│       └── interface ge-0/0/0.0
+└── interfaces
+    └── ge-0/0/0
+        └── unit 0
+            └── family inet
+                └── address 1.2.3.4/24

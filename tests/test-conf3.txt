@@ -1,0 +1,11 @@
+system {
+    host-name ABC;
+    domain-search [ google.com ];
+}
+protocols {
+    isis {
+        interface ge-0/0/0.0 {
+            t blah;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+system {
+    host-name ABC;
+    domain-search [ google.com ];
+}
+interfaces {
+    ge-0/0/0 {
+        description "blah";
+        unit 0 {
+            family inet {
+                address 1.2.3.5/24;
+            }
+        }
+    }
+    ge-0/0/1 {
+        unit 0 {
+            family inet {
+                address 2.2.3.4/24;
+            }
+        }
+    }
+}
