@@ -1,6 +1,6 @@
-from jnprsr.JuniperParserListener import JuniperParserListener
-from jnprsr.JuniperParser import JuniperParser
-from anytree import Node, NodeMixin
+from jnprsr.parser.JuniperParserListener import JuniperParserListener
+from jnprsr.parser.JuniperParser import JuniperParser
+from anytree import NodeMixin
 from anytree.node.util import _repr
 
 class JuniperASTNode(NodeMixin, object):

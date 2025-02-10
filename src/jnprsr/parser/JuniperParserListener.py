@@ -1,9 +1,9 @@
 # Generated from JuniperParser.g4 by ANTLR 4.10.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
-    from jnprsr.JuniperParser import JuniperParser
+    from jnprsr.parser.JuniperParser import JuniperParser
 else:
-    from jnprsr.JuniperParser import JuniperParser
+    from jnprsr.parser.JuniperParser import JuniperParser
 
 
 # This class defines a complete listener for a parse tree produced by JuniperParser.

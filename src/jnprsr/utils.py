@@ -1,9 +1,9 @@
 import antlr4
-from jnprsr.JuniperParser import JuniperParser
-from jnprsr.JuniperLexer import JuniperLexer
-from jnprsr.JuniperAST import JuniperAST, JuniperASTNode
-from jnprsr.JuniperASTRenderer import JuniperASTRenderer
-from anytree import RenderTree, ContStyle, Resolver
+from jnprsr.parser.JuniperParser import JuniperParser
+from jnprsr.parser.JuniperLexer import JuniperLexer
+from jnprsr.parser.JuniperAST import JuniperAST, JuniperASTNode
+from jnprsr.parser.JuniperASTRenderer import JuniperASTRenderer
+from anytree import RenderTree, Resolver
 
 
 def get_ast(input_data: str) -> JuniperASTNode:
