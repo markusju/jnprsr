@@ -147,8 +147,8 @@ dependencies = ["antlr4-python3-runtime==4.10", "argparse", "typer", "anytree"]
 
 # The following would provide a command line executable called `sample`
 # which executes the function `main` from this package when invoked.
-[project.scripts]
-sample = "sample:main"
+#[project.scripts]
+#sample = "sample:main"
 
 
 # This is configuration specific to the `setuptools` build backend.
@@ -157,3 +157,5 @@ sample = "sample:main"
 # If there are data files included in your packages that need to be
 # installed, specify them here.
 #package-data = { "sample" = ["*.dat"] }
+[tool.setuptools.dynamic]
+version = {attr = "jnprsr.__version__"}
