@@ -17,8 +17,7 @@ def subtree():
     ast = get_ast(input_data)
     session = prompt_toolkit.PromptSession()
 
-    pprint.pprint(render_dict_from_ast(ast))
-
+    # Transform AST into dict for completer
     completer_dict = {
         "show": {
             "configuration":
@@ -26,8 +25,10 @@ def subtree():
         }
     }
 
+    # Instantiate completer from dict
     completer = CustomNestedCompleter.from_nested_dict(completer_dict)
 
+    # Setup Command Prompt
     while True:
         path = session.prompt("jnprsr> ", completer=completer)
         path = path.replace("show configuration ", "")
