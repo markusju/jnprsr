@@ -1,7 +1,7 @@
 # jnprsr 
 jnprsr ('ʤunəpɑrsər) is a **Parser** for **Juniper configuration files**.
 
-It is based around a Lexer and Parser built using **ANTLR4** (https://www.antlr.org/). The formal grammar used in our project was intially created by the **batfish** (https://github.com/batfish/batfish) project.
+It is based around a Lexer and Parser built using **ANTLR4** (https://www.antlr.org/). The formal grammar used in our project was initially created by the **batfish** (https://github.com/batfish/batfish) project.
 
 Our tool allows to generate an **Abstract Syntax Tree (AST)** from a given Juniper configuration file.
 This **AST** can then be processed further. Currently, we provide the following functions:
