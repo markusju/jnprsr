@@ -171,11 +171,11 @@ interfaces {
 }
 ```
 
-Alternatively you can also simply pipe your messed up config at the script to make it pretty. In this case you do not need to end the input:
+Alternatively you can also simply pipe your messed up config at the script to make it pretty. In this case you do not need to end the input.
+Note that we are using the `-s` flag in this example. This silences any additional output, so that you can process the output more easily.
 
 ```
-$ cat what-a-mess.txt | jnprsr-pretty
-[Type CTRL+D or '!END' at a new line to end input]
+$ cat what-a-mess.txt | jnprsr-pretty -s
 interfaces {
     et-0/0/0 {
         description "More Bandwidth!";

@@ -1,18 +1,12 @@
-from sys import stdin
 from jnprsr import *
 import prompt_toolkit
 from jnprsr.prompt_toolkit_custom_nested_completer import CustomNestedCompleter
-import pprint
+from jnprsr.cli.cliutils import _read_from_stdin, _argparser
 from anytree.resolver import ChildResolverError
 
 def subtree():
-    print("[Type CTRL+D or '!END' at a new line to end input]")
-    input_data = ""
-    for line in stdin:
-        if line.startswith("!END"):
-            break
-        input_data += line
-
+    args = _argparser("jnprsr-subtree")
+    input_data = _read_from_stdin(silent=args.silent)
 
     ast = get_ast(input_data)
     session = prompt_toolkit.PromptSession()
