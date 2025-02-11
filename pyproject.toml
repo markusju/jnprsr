@@ -148,7 +148,7 @@ dependencies = ["antlr4-python3-runtime==4.10", "argparse", "typer", "anytree"]
 # The following would provide a command line executable called `sample`
 # which executes the function `main` from this package when invoked.
 [project.scripts]
-jnprsr-pretty = "jnprsr.cli:prettyprint"
+jnprsr-pretty = "jnprsr.cli:pretty"
 
 
 # This is configuration specific to the `setuptools` build backend.

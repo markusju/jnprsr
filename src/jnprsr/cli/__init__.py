@@ -1,1 +1,1 @@
-from .prettyprint import prettyprint
+from .pretty import pretty

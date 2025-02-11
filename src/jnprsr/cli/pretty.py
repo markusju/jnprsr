@@ -1,7 +1,7 @@
 from jnprsr import *
 from sys import stdin
 
-def prettyprint():
+def pretty():
     print("[Type CTRL+D or '!END' at a new line to end input]")
     input_data = ""
     for line in stdin:
