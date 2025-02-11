@@ -152,7 +152,7 @@ Some things you could do include, but are not limited to:
 - jnprsr-merge
 
 #### jnprsr-pretty
-is a pretty printer. You can supply a Juniper Configuration file and it will *pretty print* the received configuration. Meaning that the configuration is returned with the proper indentation and spacing.
+is a pretty printer. You can supply a Juniper Configuration file and it will [*pretty print*](https://en.wikipedia.org/wiki/Prettyprint) the received configuration. Meaning that the configuration is returned with the proper indentation and spacing.
 You can use the script interactively. Simply call it and then paste the configuration. You can end your input on an empty new line with `CTRL+D` or by typing `!END`.
 
 ```
