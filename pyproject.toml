@@ -147,7 +147,7 @@ dependencies = ["antlr4-python3-runtime==4.10", "argparse", "typer", "anytree"]
 
 # The following would provide a command line executable called `sample`
 # which executes the function `main` from this package when invoked.
-#[project.scripts]
+[project.scripts]
 jnprsr-pretty = "jnprsr.cli:prettyprint"
 
 
