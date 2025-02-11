@@ -146,7 +146,44 @@ Some things you could do include, but are not limited to:
 
 ### On the shell
 
-**jnprsr** currently comes with 3 commands that you can use on your shell, after you have installed the package:
+**jnprsr** currently comes with 3 commands that you can use on your shell:
 - jnprsr-pretty
 - jnprsr-subtree
 - jnprsr-merge
+
+#### jnprsr-pretty
+is a pretty printer. You can supply a Juniper Configuration file and it will *pretty print* the received configuration. Meaning that the configuration is returned with the proper indentation and spacing.
+You can use the script interactively. Simply call it and then paste the configuration. You can end your input on an empty new line with `CTRL+D` or by typing `!END`.
+
+```
+$ jnprsr-pretty
+[Type CTRL+D or '!END' at a new line to end input]
+interfaces { et-0/0/0 {description "More Bandwidth!"; unit 0 {family inet{address 192.0.2.1/24;}}}}
+interfaces {
+    et-0/0/0 {
+        description "More Bandwidth!";
+        unit 0 {
+            family inet {
+                address 192.0.2.1/24;
+            }
+        }
+    }
+}
+```
+
+Alternatively you can also simply pipe your messed up config at the script to make it pretty. In this case you do not need to end the input:
+
+```
+$ cat what-a-mess.txt | jnprsr-pretty
+[Type CTRL+D or '!END' at a new line to end input]
+interfaces {
+    et-0/0/0 {
+        description "More Bandwidth!";
+        unit 0 {
+            family inet {
+                address 192.0.2.1/24;
+            }
+        }
+    }
+}
+```
