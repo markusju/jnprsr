@@ -4,7 +4,7 @@ from jnprsr.parser.JuniperLexer import JuniperLexer
 from jnprsr.parser.JuniperAST import JuniperAST, JuniperASTNode
 from jnprsr.parser.JuniperASTRenderer import JuniperASTRenderer
 from anytree import RenderTree, Resolver
-
+from jnprsr.anytree_custom_dict_exporter import CustomDictExporter
 
 def get_ast(input_data: str) -> JuniperASTNode:
     # Get Raw Data
@@ -38,6 +38,10 @@ def render_ascii_tree_from_ast(ast: JuniperASTNode) -> str:
     for pre, _, node in RenderTree(ast):
         buffer += pre + node.name + "\n"
     return buffer
+
+def render_dict_from_ast(ast: JuniperASTNode) -> dict:
+    exporter = CustomDictExporter()
+    return exporter.export(ast)
 
 def __intersection(lst1, lst2):
     return list(set(lst1).intersection(lst2))
