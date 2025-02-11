@@ -149,7 +149,7 @@ dependencies = ["antlr4-python3-runtime==4.10", "argparse", "typer", "anytree", 
 # which executes the function `main` from this package when invoked.
 [project.scripts]
 jnprsr-pretty = "jnprsr.cli:pretty"
-
+jnprsr-subtree = "jnprsr.cli:subtree"
 
 # This is configuration specific to the `setuptools` build backend.
 # If you are using a different build backend, you will need to change this.
