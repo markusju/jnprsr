@@ -1,6 +1,6 @@
 """jnprsr is a Parser for Juniper Configuration Files"""
 
-__version__ = "0.0.10"
+__version__ = "0.1.0"
 __author__ = "markusju"
 __author_email__ = "markus.jungbluth@gmail.com"
 
