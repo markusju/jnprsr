@@ -16,7 +16,7 @@ def _argparser_simple_two_files():
     return args
 
 def merge():
-    args = _argparser_simple_two_files("jnprsr-merge")
+    args = _argparser_simple_two_files()
     file1 = _read_from_file(args.file1)
     file2 = _read_from_file(args.file2)
 
