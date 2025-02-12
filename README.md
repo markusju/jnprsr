@@ -197,3 +197,27 @@ Once you have loaded the configuration over STDIN you can use the auto completio
 This script can be helpful when navigating large configuration files.
 
 ![GIF showing the interactive use of jnprsr-subtree](subtree.gif)
+
+#### jnprsr-merge
+
+allow you to merge a given configuration onto another configuration. It behaves like a `load merge` operation on an existing configuration.
+
+```
+$ cat test1.txt
+system {
+    host-name "test";
+}
+$ cat test2.txt
+system {
+    name-server {
+        10.4.3.222;
+    }
+}
+$ jnprsr-merge test1.txt test2.txt
+system {
+    host-name "test";
+    name-server {
+        10.4.3.222;
+    }
+}
+```
