@@ -4,7 +4,7 @@ from jnprsr.parser.JuniperLexer import JuniperLexer
 from jnprsr.parser.JuniperAST import JuniperAST, JuniperASTNode
 from jnprsr.parser.JuniperASTRenderer import JuniperASTRenderer
 from anytree import RenderTree
-from anytree_junos_resolver import JunosResolver
+from jnprsr.anytree_junos_resolver import JunosResolver
 from jnprsr.anytree_custom_dict_exporter import CustomDictExporter
 
 def get_ast(input_data: str) -> JuniperASTNode:
