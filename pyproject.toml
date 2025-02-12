@@ -150,6 +150,7 @@ dependencies = ["antlr4-python3-runtime==4.10", "argparse", "typer", "anytree", 
 [project.scripts]
 jnprsr-pretty = "jnprsr.cli:pretty"
 jnprsr-subtree = "jnprsr.cli:subtree"
+jnprsr-merge = "jnprsr.cli:merge"
 
 # This is configuration specific to the `setuptools` build backend.
 # If you are using a different build backend, you will need to change this.
