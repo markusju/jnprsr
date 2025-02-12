@@ -62,7 +62,7 @@ def __merge(ast1: JuniperASTNode, ast2: JuniperASTNode):
     :return:
     """
     EXCEPT_KEYS = ["interface"]
-    print("merge", ast1, ast2)
+    #print("merge", ast1, ast2)
     # Get Names of all the children at current level
     ast1_children = list(map(lambda x:x.name, ast1.children))
     ast2_children = list(map(lambda x:x.name, ast2.children))
