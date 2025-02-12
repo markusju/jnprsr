@@ -1,4 +1,6 @@
 # jnprsr 
+![PyPI Version](https://img.shields.io/pypi/v/jnprsr)
+
 jnprsr ('ʤunəpɑrsər) is a **Parser** for **Juniper configuration files**.
 
 It is based around a Lexer and Parser built using **ANTLR4** (https://www.antlr.org/). The formal grammar used in our project was initially created by the **batfish** (https://github.com/batfish/batfish) project.
