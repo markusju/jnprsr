@@ -1,12 +1,26 @@
+import argparse
+
 from jnprsr import *
 import prompt_toolkit
 from jnprsr.prompt_toolkit_custom_nested_completer import CustomNestedCompleter
-from jnprsr.cli.cliutils import _read_from_stdin, _argparser
+from jnprsr.cli.cliutils import _read_from_file
 from anytree.resolver import ChildResolverError
 
+
+
+def _argparser_simple_one_file():
+    parser = argparse.ArgumentParser(
+        prog="jnprsr-subtree",
+        description='Opens an interactive CLI allowing to inspect a given configuration file.',
+        epilog="jnprsr is a Parser for Juniper Configuration Files"
+    )
+    parser.add_argument('filename', help="Configuration file to open")
+    args = parser.parse_args()
+    return args
+
 def subtree():
-    args = _argparser("jnprsr-subtree")
-    input_data = _read_from_stdin(silent=args.silent)
+    args = _argparser_simple_one_file()
+    input_data = _read_from_file(args.filename)
 
     ast = get_ast(input_data)
     session = prompt_toolkit.PromptSession()

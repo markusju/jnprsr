@@ -12,12 +12,8 @@ def _read_from_stdin(silent=False):
         input_data += line
     return input_data
 
-def _argparser(name: str):
-    parser = argparse.ArgumentParser(
-        prog=name,
-        description='Pretty prints a given Juniper Configuration read from STDIN. End input with CTRL+D or sequence \'!END\'',
-        epilog="jnprsr is a Parser for Juniper Configuration Files"
-    )
-    parser.add_argument('-s', '--silent', action="store_true", help="Silent mode: Silences any additional output. Recommended when used in scripts")
-    args = parser.parse_args()
-    return args
+def _read_from_file(filename):
+    with open(filename, 'r') as file:
+        file_content = file.read()
+
+    return file_content
