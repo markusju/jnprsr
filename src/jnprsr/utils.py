@@ -50,7 +50,7 @@ def __intersection(lst1, lst2):
 def __difference(lst1, lst2):
     return list(set(lst1).difference(lst2))
 
-def merge(ast1, ast2):
+def merge(ast1, ast2) -> JuniperASTNode:
     __merge(ast1, ast2)
     return ast1
 

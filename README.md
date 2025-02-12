@@ -221,3 +221,28 @@ system {
     }
 }
 ```
+
+### In your python script
+
+You can easily use **jnprsr** in your own scripts. For this you will almost always start with the `get_ast()` function. It will parse a given string and return an object of the type `JuniperASTNode`. This datatype inherits properties from the anytree `NodeMixin` type. So you can work with this object the same way you would work with an anytree tree.
+For ease of use we have created some helper functions that allow 
+
+```
+import jnprsr
+
+config = "system { host-name "test"; }"
+ast = jnprsr.get_ast(config)
+```
+
+For ease of use we have created some Juniper Configuration specific helper functions:
+
+- `render_config_from_ast(ast: JuniperASTNode) -> str`
+  - This will return a textual representation of the AST, meaning it will converted back into configuration text.
+- `render_ascii_tree_from_ast(ast: JuniperASTNode) -> str`
+  - This will return an ascii tree representing the AST, because why not? :)
+- `render_dict_from_ast(ast: JuniperASTNode) -> dict`
+  - This will return a dictionary from a given configuration file.
+- `merge(ast1, ast2) -> JuniperASTNode`
+  - This will merge ast2 onto ast1
+- `get_sub_tree(ast: JuniperASTNode, path: str) -> JuniperASTNode`
+  - This will return the subtree at specified path, for example 'interfaces et-0/0/0'
