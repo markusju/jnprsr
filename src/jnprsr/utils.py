@@ -3,7 +3,8 @@ from jnprsr.parser.JuniperParser import JuniperParser
 from jnprsr.parser.JuniperLexer import JuniperLexer
 from jnprsr.parser.JuniperAST import JuniperAST, JuniperASTNode
 from jnprsr.parser.JuniperASTRenderer import JuniperASTRenderer
-from anytree import RenderTree, Resolver
+from anytree import RenderTree
+from anytree_junos_resolver import JunosResolver
 from jnprsr.anytree_custom_dict_exporter import CustomDictExporter
 
 def get_ast(input_data: str) -> JuniperASTNode:
@@ -113,5 +114,5 @@ def __merge(ast1: JuniperASTNode, ast2: JuniperASTNode):
 
 
 def get_sub_tree(ast: JuniperASTNode, path: str) -> JuniperASTNode:
-    resolver = Resolver()
+    resolver = JunosResolver()
     return resolver.get(ast, path)
