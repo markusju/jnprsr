@@ -193,7 +193,7 @@ interfaces {
 #### jnprsr-subtree
 
 is an interactive CLI allowing you to navigate a configuration (almost) as if you are working on a real device.
-Once you have loaded the configuration over STDIN you can use the auto completion function using the `<TAB>` key. You can navigate to a suggestion using the arrow keys.
+Once you have loaded the configuration from a file, you can use the auto-completion function using the `<TAB>` key. You can navigate to a suggestion using the arrow keys.
 This script can be helpful when navigating large configuration files.
 
 ![GIF showing the interactive use of jnprsr-subtree](subtree.gif)
