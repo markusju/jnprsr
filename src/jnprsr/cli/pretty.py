@@ -14,7 +14,7 @@ def _argparser_simple_direct_input():
     return args
 
 def pretty():
-    args = _argparser_simple_direct_input("jnprsr-pretty")
+    args = _argparser_simple_direct_input()
 
     input_data = _read_from_stdin(silent=args.silent)
     # We simply generate an abstract syntax tree
