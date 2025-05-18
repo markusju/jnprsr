@@ -30,7 +30,6 @@ You can install jnprsr using pip:
 ```
 pip install jnprsr
 ```
-
 You can also install directly from Git:
 ```
 pip install git+https://github.com/markusju/jnprsr.git
@@ -127,6 +126,7 @@ protocols {
 and you want to access the sub-tree of the *SKYNET-PEER* BGP peer-group. 
 
 Using **jnprsr** you can easily perform the equivalent of
+
 `> show configuration protocols bgp group SKYNET-PEER`:
 
 ```
